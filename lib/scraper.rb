@@ -4,7 +4,7 @@ require 'open-uri'
 require_relative './course.rb'
 
 class Scraper
-  
+
     def print_courses
     self.make_courses
     Course.all.each do |course|
@@ -13,10 +13,22 @@ class Scraper
         puts "  Schedule: #{course.schedule}"
         puts "  Description: #{course.description}"
       end
+
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
+
+require_relative './course.rb'
+
+class Scraper
+
+  def get_page
+      # more code coming soon!
+      doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
+  end
+
+end
     end
   end
-  
+
 end
-
-
-
